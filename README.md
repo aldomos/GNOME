@@ -9,8 +9,8 @@ then compared through a Multi-Layer Perceptron and Linear Sum Assignement Proble
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Data](#data)
+- [Usage](#usage)
 - [License](#license)
 - [Acknoledgements](#acknoledgements)
 - [Cite](#cite)
@@ -21,13 +21,15 @@ python version: Python 3.9.7 \
 torch version: Pytorch 1.11.0 \
 CUDA Version: CUDA 11.6
 
+## Data
+Link for data repository: [data_folder_link](https://drive.google.com/drive/folders/1wiebwTGNJ3oNL1phEoL5TKk8b72gBJ0f?usp=sharing)
 
 ## Usage
+First Download the Data repository above. 
 Following is the command line to launch a training on Linux dataset : 
 
 ``` python python/main_GNOME.py --basedir /my_directory --dataset Linux_csv/Linux.csv```
-## Data
-Link for data repository: [data_folder_link](https://drive.google.com/drive/folders/1wiebwTGNJ3oNL1phEoL5TKk8b72gBJ0f?usp=sharing)
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
