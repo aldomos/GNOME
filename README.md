@@ -28,20 +28,20 @@ Link for data repository: [data_folder_link](https://drive.google.com/drive/fold
 First Download the Data repository above. \
 In the following, /my_directory design the working directory. \
 Following is the command line to launch a training of GNOME on Linux dataset : 
-
+\
 ``` python python/main_GNOME.py --basedir /my_directory --dataset Linux_csv/Linux.csv```
 \
 Following is the command line to launch a training of GNOME on AIDS dataset : 
-
+\
 ``` python python/main_GNOME.py --basedir /my_directory --dataset AIDS_csv/AIDS.csv```
 \
 Following is the command line to launch a training of GNOME on IMDB dataset : 
-
+\
 ``` python python/main_GNOME.py --basedir /my_directory --dataset Linux_csv/Linux.csv```
 
 \
 Following is the command line to launch a training of GNOME on MAO dataset with cost1, consider --edge_features True for taking into account Edges features and using GINE instead of GIN : 
-
+\
 ``` python python/main_GNOME.py --basedir /my_directory --dataset datasets_ged/MAO/mao_cost1.csv```
 \
 Other Hyper parameters can be used in the command line see the parser help for more indications.
