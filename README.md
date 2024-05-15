@@ -28,3 +28,4 @@ Following is the command line to launch a training on Linux dataset :
 Link for data repository: [data_folder_link](https://drive.google.com/drive/folders/1wiebwTGNJ3oNL1phEoL5TKk8b72gBJ0f?usp=sharing)
 
 ## License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
