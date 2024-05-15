@@ -8,7 +8,7 @@ then compared through a Multi-Layer Perceptron and Linear Sum Assignement Proble
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Data] (#data)
+- [Data](#data)
 - [License](#license)
 
 ## Installation
