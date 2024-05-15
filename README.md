@@ -2,7 +2,7 @@
 Graph Node Matching for Edit Distance\
 Repository of code of the article "Graph Node Matching for Edit Distance", Pattern Recognition Elsevier.
 This repo contains a supervised metric learning approach that combines Graph Neural Networks(GNN) and optimal transport to learn an approximation of the Graph Edit Distance (GED) in an end-to-end fashion. The model consists of two siamese GNNs and a comparison block. Each graph pair’s nodes are augmented by positional encoding and embedded by multiple Graph Isomorphism Network(GIN) layers. The obtained embeddings are
-then compared through a Multi-Layer Perceptron and Linear Sum Assignement Problem(LSAP) solver applied on a node-wise Euclidean metric defined in the embedding space.\
+then compared through a Multi-Layer Perceptron and Linear Sum Assignement Problem(LSAP) solver applied on a node-wise Euclidean metric defined in the embedding space.
 
 ![GNOME architecture](GNOME_img.png)
 
