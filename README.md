@@ -17,11 +17,12 @@ then compared through a Multi-Layer Perceptron and Linear Sum Assignement Proble
 
 python version: Python 3.9.7 \
 torch version: Pytorch 1.11.0 \
-CUDA Version: CUDA 11.6 \
+CUDA Version: CUDA 11.6
 
 
 ## Usage
-Following is the command line to launch a training on Linux dataset : \ 
+Following is the command line to launch a training on Linux dataset : \
+
 ```shell python python/main_GNOME.py --basedir my_directory --dataset Linux_csv/Linux.csv```
 ## Data
 Link for data repository: [data_folder_link](https://drive.google.com/drive/folders/1wiebwTGNJ3oNL1phEoL5TKk8b72gBJ0f?usp=sharing)
