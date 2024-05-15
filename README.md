@@ -12,6 +12,8 @@ then compared through a Multi-Layer Perceptron and Linear Sum Assignement Proble
 - [Usage](#usage)
 - [Data](#data)
 - [License](#license)
+- [Acknoledgements](#acknoledgements)
+- [Cite](#cite)
 
 ## Installation
 
@@ -29,3 +31,14 @@ Link for data repository: [data_folder_link](https://drive.google.com/drive/fold
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
+
+## Acknoledgements
+The authors acknowledge the support of the French Agence Nationale de la Recherche
+(ANR) under grant ANR-21-CE23-0025 (CoDeGNN project). The authors acknowledge the
+support of the ANR and the R´egion Normandie under grant ANR-20-THIA-0021 (HAISCoDe
+project).
+
+## Cite
+To cite our work, use the following bibtex
+
+@Journal{ Moscatelli2024GNOME, title={Graph Node Matching for Edit Distance}, author={Moscatelli, Aldo and Piquenot, Jason and Berar,Maxime and Héroux, Pierre and Adam, Sébastien}, booktitle={Pattern Recognition Letters Elsevier}, year={2024}}
