@@ -8,11 +8,17 @@ then compared through a Multi-Layer Perceptron and Linear Sum Assignement Proble
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Data] (#data)
 - [License](#license)
 
 ## Installation
 
 Describe the steps to install your project here. Make sure to include any prerequisites needed and the commands to run to install the project.
 
+## Usage
+TO DO
+
+## Data
 Link for data repository: [data_folder_link](https://drive.google.com/drive/folders/1wiebwTGNJ3oNL1phEoL5TKk8b72gBJ0f?usp=sharing)
+
+## License
