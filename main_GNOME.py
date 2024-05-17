@@ -212,7 +212,7 @@ def main():
 		train_loss = []
 		val_mse = []
 		metric = Metric(trainer.testing_pairs)
-		test_predictions, test_matches,test_emb = trainer.predict_best_model(trainer.testing_pairs)
+		test_predictions, test_matches = trainer.predict_best_model(trainer.testing_pairs)
 
 		print(test_predictions[0:10])
 		print(test_matches[0])
