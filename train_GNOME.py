@@ -247,7 +247,8 @@ class Trainer(object):
             self.save_checkpoint(is_best_model=True)
         else:
             min_metric = min(self.val_metrics[-self.args.patience:])
-            if val_metric > min_metric + self.args.delta:
+            tol = 0.0001
+            if val_metric > min_metric + tol:
                 print("val and min metric",val_metric,min_metric)
                 self.val_metrics.append(val_metric)
 
