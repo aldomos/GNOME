@@ -102,18 +102,16 @@ class GNOME(torch.nn.Module):
         metric_embedding_1 = self.out_emb(node_embedding_1)
         metric_embedding_2 = self.out_emb(node_embedding_2)
 
-        substitution_distance_matrix = [torch.cdist(metric_embedding_1, metric_embedding_2)]
+        substitution_distance_matrix = torch.cdist(metric_embedding_1, metric_embedding_2)
 
         if n1 > n2:
             ones = torch.ones((n1-n2,1)).cuda()
             deletion_distance_matrix =torch.mul(torch.norm(metric_embedding_1,dim=1),ones)
-            full_distance_matrix = [
-            torch.cat((substitution_distance_matrix, deletion_distance_matrix.T), dim=1)]
+            full_distance_matrix = torch.cat((substitution_distance_matrix, deletion_distance_matrix.T), dim=1)
         if n2 > n1:
             ones = torch.ones((n2-n1,1)).cuda()
             deletion_distance_matrix =torch.mul(torch.norm(metric_embedding_2,dim=1),ones)
-            full_distance_matrix = [
-            torch.cat((substitution_distance_matrix, deletion_distance_matrix), dim=0)]
+            full_distance_matrix = torch.cat((substitution_distance_matrix, deletion_distance_matrix), dim=0)
 
         if n1 == n2:
             full_distance_matrix = substitution_distance_matrix   
