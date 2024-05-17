@@ -20,7 +20,7 @@ class GNOME(torch.nn.Module):
     def setup_layers(self):
         self.edges_features_layer = torch.nn.Linear(self.edge_dim,self.args.gnn_size[0])
         self.gnn_layers = torch.nn.ModuleList([])
-        num_ftrs = self.node_dim + self.args.rw_k
+        num_ftrs = self.node_dim
         self.pre_emb = torch.nn.Linear(num_ftrs+self.args.rw_k,self.args.gnn_size[0])
         self.num_gnn_layers = len(self.args.gnn_size)
         hidden_size = self.args.gnn_size[0]
