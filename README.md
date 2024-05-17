@@ -44,7 +44,7 @@ Following is the command line to launch a training of GNOME on MAO dataset with 
 \
 ``` python python/main_GNOME.py --basedir /my_directory --dataset datasets_ged/MAO/mao_cost1.csv```
 \
-Other Hyper parameters can be used in the command line see the parser help for more indications.
+Other Hyperparameters can be used in the command line see the parser help for more indications.
 
 
 ## License
@@ -53,7 +53,7 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 ## Acknoledgements
 The authors acknowledge the support of the French Agence Nationale de la Recherche
 (ANR) under grant ANR-21-CE23-0025 (CoDeGNN project). The authors acknowledge the
-support of the ANR and the R´egion Normandie under grant ANR-20-THIA-0021 (HAISCoDe
+support of the ANR and the Région Normandie under grant ANR-20-THIA-0021 (HAISCoDe
 project).
 
 ## Cite
