@@ -304,10 +304,7 @@ class Trainer(object):
             print('[Epoch {}]: Finish in {:.2f} sec ({:.2f} min).'.format(
                     self.epoch, epoch_duration.total_seconds(), epoch_duration.total_seconds() / 60))
             self.losses.append(loss)
-            validation_mse = self.score(test_pairs=self.validation_pairs_dgl)
-            baseline_var = self.baseline_variance(test_pairs=self.validation_pairs_dgl)
-            print("Validation MSE: {:.05f}, Baseline: {:.05f}".format(validation_mse, baseline_var))
-            self.mse_val.append(validation_mse)
+            
             is_final_epoch=(self.epoch+1 == self.args.epochs)
 
             if self.epoch % evaluation_frequency == 0 or is_final_epoch:
@@ -315,9 +312,11 @@ class Trainer(object):
                 
                 validation_predictions = self.predict(self.validation_pairs)
                 #valid_mae = metric.mae(validation_predictions)
-                valid_mse = metric.mse(validation_predictions)
-
-                validation_metric = valid_mse
+                validation_mse = metric.mse(validation_predictions)
+                baseline_var = self.baseline_variance(test_pairs=self.validation_pairs_dgl)
+                print("Validation MSE: {:.05f}, Baseline: {:.05f}".format(validation_mse, baseline_var))
+                self.mse_val.append(validation_mse)
+                validation_metric = validation_mse
                 
                 self.track_metric_state(validation_metric, is_final_epoch=is_final_epoch)
                 print(f'Evaluation: {validation_metric:.05f} (finishes in {(datetime.now() - eval_start_time).total_seconds()})')
