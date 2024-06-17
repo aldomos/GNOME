@@ -87,13 +87,15 @@ def RW(G,k):
     Dinv = sp.diags(dgl.backend.asnumpy(G.in_degrees()).clip(1) ** -1.0, dtype=float)
     RW = Dinv*A 
     M = RW
+    M_diag = np.array(M.diagonal())
     # Iterate
     nb_pos_enc = k
-    PE = [torch.from_numpy(M.diagonal()).float()]
+    PE = [torch.from_numpy(M_diag).float()]
     M_power = M
     for _ in range(nb_pos_enc-1):
         M_power = M_power * M
-        PE.append(torch.from_numpy(M_power.diagonal()).float())
+        M_diag = np.array(M_power.diagonal())
+        PE.append(torch.from_numpy(M_diag).float())
     PE = torch.stack(PE,dim=-1)
     return PE
     
