@@ -70,9 +70,9 @@ def process_pair(data, global_labels,global_edges_labels,args):
     data['G_1'] = G_1
     data['G_2'] = G_2
     
-    if np.linalg.norm(G_1.adj(scipy_fmt="csr").todense()-G_1.adj(scipy_fmt="csr").todense().T) > 0 :
+    if torch.norm(G_1.adj_external().to_dense()-G_1.adj_external().to_dense().T) > 0 :
         G_1 = dgl.to_bidirected(G_1,copy_ndata = True)
-    if np.linalg.norm(G_2.adj(scipy_fmt="csr").todense()-G_2.adj(scipy_fmt="csr").todense().T) > 0 :
+    if torch.norm(G_2.adj_external().to_dense()-G_2.adj_external().to_dense().T) > 0 :
         G_2 = dgl.to_bidirected(G_2,copy_ndata = True)
     
     PE_1 = RW(G_1,args.rw_k)
@@ -83,7 +83,7 @@ def process_pair(data, global_labels,global_edges_labels,args):
     return data
     
 def RW(G,k):
-    A = G.adj(scipy_fmt="csr")
+    A = G.adj_external().to_dense()
     Dinv = sp.diags(dgl.backend.asnumpy(G.in_degrees()).clip(1) ** -1.0, dtype=float)
     RW = Dinv*A 
     M = RW
