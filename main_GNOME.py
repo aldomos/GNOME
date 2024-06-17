@@ -93,15 +93,6 @@ def main():
 	
 	device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-	args.exp_dir = path.join(args.basedir, args.exp_label)
-	if path.exists(args.exp_dir):
-		print('Experiment directory already exists...')
-	else:
-		print('Creating experiment directory: {}'.format(args.exp_dir))
-		os.makedirs(args.exp_dir)
-	
-
-
 	if args.cross_val == True :
 		dataset_name = args.dataset.split('.')[0].split('/')[-2]
 		print('Cross Validation mode')
@@ -112,6 +103,12 @@ def main():
 			df = pd.read_csv(args.dataset, delimiter = ",")
 		
 		for fold in range(args.nb_folds):
+			args.exp_dir = path.join(args.basedir, args.exp_label,'fold'+str(fold))
+			if path.exists(args.exp_dir):
+				print('Experiment directory already exists...')
+			else:
+				print('Creating experiment directory: {}'.format(args.exp_dir))
+			os.makedirs(args.exp_dir)
 			test_fold = fold
 			valid_fold = (fold+1)%args.nb_folds
 			train_folds = [j for j in range(0, args.nb_folds) if j!=test_fold and j!=valid_fold]
@@ -171,6 +168,12 @@ def main():
 
 
 	else :
+		args.exp_dir = path.join(args.basedir, args.exp_label)
+		if path.exists(args.exp_dir):
+			print('Experiment directory already exists...')
+		else:
+			print('Creating experiment directory: {}'.format(args.exp_dir))
+		os.makedirs(args.exp_dir)
 		dataset_name = args.dataset.split('_')[0]
 		train_folder = dataset_name+'_train/'
 		test_folder = dataset_name+'_test/'
