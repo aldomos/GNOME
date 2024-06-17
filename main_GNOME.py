@@ -103,11 +103,11 @@ def main():
 
 
 	if args.cross_val == True :
-		dataset_name = args.dataset.split('.')[0].split('/')[-1]
+		dataset_name = args.dataset.split('.')[0].split('/')[-2]
 		print('Cross Validation mode')
 		dflist = []
 		for fold in range(args.nb_folds):
-			fold_location = glob.glob(os.path.join("CVfolder/", str(fold), "*.json"))
+			fold_location = glob.glob(os.path.join("CVfolder/",dataset_name+'/', str(fold)+'/', "*.json"))
 			dflist.append(json.load(open(fold_location[0])))
 			df = pd.read_csv(args.dataset, delimiter = ",")
 		
