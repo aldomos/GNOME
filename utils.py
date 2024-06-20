@@ -1,14 +1,14 @@
 from texttable import Texttable
 import torch
 import numpy as np
-import ot
+from ot import emd
 from pandas import DataFrame
 
 def linear_assignment(cost_matrix):
     num_pts_1 = cost_matrix.shape[0]
     a = (torch.ones(num_pts_1)).cuda()
     loss = torch.tensor([0.0]).cuda()
-    mat_match = ot.emd(a, a, cost_matrix)
+    mat_match = emd(a, a, cost_matrix)
     matching = torch.where(mat_match != 0)
     loss += torch.sum(mat_match*cost_matrix)
     return loss,matching
