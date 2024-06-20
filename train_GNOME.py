@@ -93,7 +93,7 @@ def RW(G,k):
     PE = [torch.from_numpy(M_diag).float()]
     M_power = M
     for _ in range(nb_pos_enc-1):
-        M_power = M_power * M
+        M_power = M_power @ M
         M_diag = np.array(M_power.diagonal())
         PE.append(torch.from_numpy(M_diag).float())
     PE = torch.stack(PE,dim=-1)
