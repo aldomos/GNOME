@@ -97,13 +97,14 @@ def main():
 		dataset_name = args.dataset.split('.')[0].split('/')[-2]
 		print('Cross Validation mode')
 		dflist = []
+		cost = args.dataset.split('.')[0].split('_')[-1]
 		for fold in range(args.nb_folds):
 			fold_location = glob.glob(os.path.join("CVfolder/",dataset_name+'/', str(fold)+'/', "*.json"))
 			dflist.append(json.load(open(fold_location[0])))
 			df = pd.read_csv(args.dataset, delimiter = ",")
 		
 		for fold in range(args.nb_folds):
-			args.exp_dir = path.join(args.basedir, args.exp_label,'fold'+str(fold))
+			args.exp_dir = path.join(args.basedir, args.exp_label,'fold'+str(fold)+cost)
 			if path.exists(args.exp_dir):
 				print('Experiment directory already exists...')
 			else:
