@@ -47,7 +47,8 @@ def save_csv(trainer,test_predictions,test_matches,dataset_name,args,test_mse,te
     df_res = DataFrame(csvdict, columns= ['Graph1', 'Graph2', 'GED', 'Pred','match'])
 
     if args.cross_val == True :
-        name = dataset_name+'_fold'+str(test_fold)+'_kval_'+str(args.rw_k)+'_nbcouches_'+str(args.gnn_size)+'_lr_'+str(args.learning_rate)+ '_mse_'+str(round(test_mse,5))+'mae_'+str(round(test_mae,5))+'.csv'
+        cost = args.dataset.split('.')[0].split('_')[-1]
+        name = dataset_name+cost+'_fold'+str(test_fold)+'_kval_'+str(args.rw_k)+'_nbcouches_'+str(args.gnn_size)+'_lr_'+str(args.learning_rate)+ '_mse_'+str(round(test_mse,5))+'mae_'+str(round(test_mae,5))+'.csv'
         df_res.to_csv (name, index = None, header=True, encoding='utf-8', sep=';')
     else :
         nom = dataset_name+'_kval_'+str(args.rw_k)+'_nbcouches_'+str(args.gnn_size)+'_'+'lr_'+str(args.learning_rate)+ '_'+ '_' +'mse_'+str(round(test_mse,5))+'mae_'+str(round(test_mae,5))+'.csv'
